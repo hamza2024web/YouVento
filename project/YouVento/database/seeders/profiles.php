@@ -14,5 +14,6 @@ class profiles extends Seeder
     public function run()
     {
         \App\Models\Profile::factory(10)->create();
+        
     }
 }
