@@ -1,8 +1,10 @@
 FROM php:8.2-apache
 
-
 # Installer les dépendances nécessaires pour PostgreSQL
-RUN apt-get update && apt-get install -y libpq-dev
+RUN apt-get update && apt-get install -y libpq-dev \
+    curl \
+    gnupg \
+    ca-certificates
 
 # Install PgSQL PDO extension
 RUN docker-php-ext-install pdo pdo_pgsql
@@ -12,3 +14,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 # Enable Apache mod_rewrite
 RUN a2enmod rewrite
+
+# Install Node.js and npm
+RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
+    && apt-get install -y nodejs \
+    && npm install -g npm@latest

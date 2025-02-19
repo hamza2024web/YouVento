@@ -1,6 +1,8 @@
 <?php
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegistreController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,5 +15,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/home',[homeController::class,'index']);
 Route::get('/profiles',[ProfileController::class,'index']);
-
+Route::get('/login',[LoginController::class,'index']);
+Route::post('/login',[LoginController::class,'login']);
+Route::get('registre',[RegistreController::class,'index']);
+Route::post('store',[RegistreController::class,'store']); 
