@@ -14,6 +14,7 @@ class Profile extends Model
         'email',
         'password',
         'created_at',
-        'updated_at'
+        'updated_at',
+        'role'
     ];
 }

@@ -13,7 +13,7 @@
             <ul class="flex space-x-6">
                 <li><a href="#" class="hover:underline">Home</a></li>
                 <li><a href="#" class="hover:underline">Events</a></li>
-                <li><a href="#" class="hover:underline">About</a></li>
+                <li><a href="/club" class="hover:underline">Clubs</a></li>
                 <li><a href="#" class="hover:underline">Contact</a></li>
             </ul>
             <div class="space-x-4">

@@ -21,7 +21,8 @@ class RegistreController extends Controller
         $formFields = $request->validate([
             'username' => 'required',
             'email' => 'required | email | unique:profiles',
-            'password' => 'required | confirmed'
+            'password' => 'required | confirmed',
+            'role' => 'required'
         ]);
         $formFields['password'] = Hash::make($password);
         Profile::create($formFields);
