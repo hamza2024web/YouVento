@@ -65,6 +65,7 @@
                 </div>
             </section>
 
+            
             <!-- Clubs Section -->
             <section id="clubs" class="mb-8">
                 <h2 class="text-2xl font-semibold mb-4">Clubs</h2>
