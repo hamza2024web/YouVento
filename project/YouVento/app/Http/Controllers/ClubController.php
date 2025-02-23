@@ -17,14 +17,24 @@ class ClubController extends Controller
             'name' => 'required',
             'description' => 'required',
             'logo' => 'required',
-            'categorie' => 'required'
+            'categorie' => 'required'   
         ]);
         
         Club::create($clubFields);
         return redirect('dashboard');
     }
     public function editClub(Club $club){
-        return view('editClub');
+        return view('editClub',compact('club'));
+    }
+    public function update(Club $club , Request $request){
+        $clubFields = $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'logo' => 'required',
+            'categorie' => 'required'   
+        ]);
+        $club->fill($clubFields)->save();
+        return redirect('clubs')->with('success','Le Club a été bien Modifié');
     }
     public function deleteClub(Club $club){
         $club->delete();

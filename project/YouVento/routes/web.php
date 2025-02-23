@@ -32,7 +32,9 @@ Route::get('/dashboard',[AdminController::class,'dashboard']);
 Route::get('/etudiant',[EtudiantController::class,'etudiant']);
 Route::post('/addClub',[ClubController::class,'storeClub']);
 Route::get('/clubs',[ClubController::class,'index']);
-Route::get('/editClub',[ClubController::class,'editClub']);
-Route::put('/editClub',[ClubController::class,'Update']);
+Route::get('/editClub/{club}/edit',[ClubController::class,'editClub'])
+->name('clubs.edit');
+Route::put('/editClub/{club}',[ClubController::class,'Update'])
+->name('clubs.update');
 Route::delete('/deleteClub/{club}',[ClubController::class,'deleteClub'])
 ->name('clubs.delete');
