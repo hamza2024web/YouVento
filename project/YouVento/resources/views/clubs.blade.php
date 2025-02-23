@@ -48,7 +48,18 @@
                             <span class="flex items-center space-x-2"><i class="fas fa-layer-group"></i><span>{{$club->categorie}}</span></span>
                             <span class="text-sm text-gray-500">{{ now()->format('Y') }}</span>
                         </div>
-                        <a href="#" class="inline-block bg-gradient-to-r from-green-500 to-green-700 text-white px-6 py-3 rounded-xl hover:from-green-600 hover:to-green-800 transition">View Club</a>
+                        <div class="flex space-x-4">
+                            <form action="/editClub/{{$club->id}}" method="POST">
+                                @csrf
+                                <input type="hidden" name="_method" value="PUT">
+                                <button class="inline-block bg-gradient-to-r from-yellow-500 to-green-700 text-white px-6 py-3 rounded-xl hover:from-yellow-600 hover:to-yellow-800 transition">Modifier</button>
+                            </form>
+                            <form action="{{ route('clubs.delete',$club->id) }}" method="POST">
+                            @method('DELETE')    
+                            @csrf
+                                <button class="inline-block bg-gradient-to-r from-red-500 to-red-700 text-white px-6 py-3 rounded-xl hover:from-red-600 hover:to-red-800 transition">Delete</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
                 @endforeach

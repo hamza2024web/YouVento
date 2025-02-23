@@ -23,4 +23,11 @@ class ClubController extends Controller
         Club::create($clubFields);
         return redirect('dashboard');
     }
+    public function editClub(Club $club){
+        return view('editClub');
+    }
+    public function deleteClub(Club $club){
+        $club->delete();
+        return redirect('clubs')->with('success','Le Club a été bien supprimé');
+    }
 }

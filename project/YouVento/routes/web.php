@@ -19,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+/* These lines of code are defining various routes for a web application using Laravel framework. Each
+route specifies a URL path and associates it with a specific controller method that should be
+executed when that URL is accessed using the specified HTTP method. */
 Route::get('/home',[homeController::class,'index']);
 Route::get('/profiles',[ProfileController::class,'index']);
 Route::get('/login',[LoginController::class,'index']);
@@ -29,3 +32,7 @@ Route::get('/dashboard',[AdminController::class,'dashboard']);
 Route::get('/etudiant',[EtudiantController::class,'etudiant']);
 Route::post('/addClub',[ClubController::class,'storeClub']);
 Route::get('/clubs',[ClubController::class,'index']);
+Route::get('/editClub',[ClubController::class,'editClub']);
+Route::put('/editClub',[ClubController::class,'Update']);
+Route::delete('/deleteClub/{club}',[ClubController::class,'deleteClub'])
+->name('clubs.delete');
