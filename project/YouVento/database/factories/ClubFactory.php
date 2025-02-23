@@ -14,7 +14,11 @@ class ClubFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => $this->faker->company(),
+            'description' => $this->faker->paragraph(),
+            'logo' => $this->faker->imageUrl(),
+            'categorie' => $this->faker->randomElement(['Sports', 'Music', 'Technology', 'Art']),
+            'tag' => $this->faker->name(),
         ];
     }
 }
